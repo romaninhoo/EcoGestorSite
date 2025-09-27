@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EcoGestor — Gestão de Resíduos</title>
+  <style>
+    :root{
+      --bg:#f6fbf8;
+      --card:#ffffff;
+      --accent1:#2a9d8f; /* teal */
+      --accent2:#e9c46a; /* warm yellow */
+      --muted:#64748b;
+      --glass: rgba(255,255,255,0.6);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, sans-serif; margin:0;background:linear-gradient(180deg,#eaf6f2,#f6fbf8);color:#073642}
+    header{position:sticky;top:0;backdrop-filter: blur(6px);background:rgba(255,255,255,0.6);border-bottom:1px solid rgba(2,6,23,0.04);z-index:40}
+    .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:48px;border-radius:8px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{display:inline-block;padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:600}
+    nav a.active, nav a:hover{color:var(--accent1);background:linear-gradient(90deg,transparent,rgba(42,157,143,0.06));}
+    main{max-width:1100px;margin:40px auto;padding:24px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .card{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.06)}
+    .title{font-size:28px;margin:0 0 8px}
+    .subtitle{color:var(--muted);margin:0 0 18px}
+    .cta{display:inline-block;padding:10px 14px;background:var(--accent1);color:white;border-radius:12px;text-decoration:none;font-weight:700;margin-top:8px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .feature{padding:12px;border-radius:12px;background:linear-gradient(180deg,var(--glass),rgba(255,255,255,0.9));border:1px solid rgba(2,6,23,0.04);}
+    .logoBox{text-align:center}
+    .logoBox img{height:80px}
+    section{margin-top:26px}
+    h2{margin:0 0 12px}
+    /* table */
+    .table-wrap{overflow:auto}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px;border-bottom:1px dashed rgba(2,6,23,0.06);text-align:left}
+    .actions{display:flex;gap:8px}
+    button{padding:8px 10px;border-radius:10px;border:0;background:var(--accent2);cursor:pointer}
+    /* cards grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    /* pie and chart placeholders */
+    .media{height:260px;border-radius:12px;background:linear-gradient(135deg,#e8f6f3,#f6fbf8);display:flex;align-items:center;justify-content:center;color:var(--muted);}
+    footer{max-width:1100px;margin:40px auto;padding:18px;text-align:center;color:var(--muted)}
+    /* small screens */
+    @media(max-width:900px){.hero{grid-template-columns:1fr;}.grid{grid-template-columns:1fr;}.features{grid-template-columns:repeat(2,1fr)}nav ul{display:none}}
+    /* subtle animation */
+    .fade-up{transform:translateY(18px);opacity:0;transition:all 600ms cubic-bezier(.2,.9,.3,1)}
+    .fade-up.show{transform:none;opacity:1}
+    .pulse{animation:pulse 3s infinite}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}
+    .chip{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(2,6,23,0.05);font-weight:700}
+    .legend{display:flex;gap:10px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <img src="/mnt/data/0d3fdeeb-6d21-40fb-b5b1-d2696aba15d1.png" alt="EcoGestor logo">
+        <div>
+          <div style="font-weight:800;color:var(--accent1)">EcoGestor</div>
+          <div style="font-size:12px;color:var(--muted)">Gestão acessível de resíduos</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home" class="active">Início</a></li>
+          <li><a href="#servicos">Produtos & Serviços</a></li>
+          <li><a href="#ganhos">Gains</a></li>
+          <li><a href="#dores">Dores</a></li>
+          <li><a href="#legislacao">Legislação</a></li>
+          <li><a href="#estudos">Estudos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="card fade-up show">
+        <h1 class="title">EcoGestor — Simplificando a gestão de resíduos</h1>
+        <p class="subtitle">Plataforma que registra resíduos gerados por empresas, conecta pontos de descarte e facilita parcerias — acessível para médias e pequenas empresas.</p>
+        <div class="features">
+          <div class="feature"><strong>Registro de resíduos</strong><div style="font-size:13px;color:var(--muted)">Vincule tipos de resíduos às empresas</div></div>
+          <div class="feature"><strong>Pontos de distribuição</strong><div style="font-size:13px;color:var(--muted)">Mapeamento para descarte correto</div></div>
+          <div class="feature"><strong>Conexões comerciais</strong><div style="font-size:13px;color:var(--muted)">Integração entre geradores e reaproveitadores</div></div>
+        </div>
+        <a class="cta" href="#servicos">Ver serviços</a>
+        <div style="margin-top:14px;color:var(--muted);font-size:13px">Fonte: pesquisa Capterra — ~40% das médias empresas não usam SGRs</div>
+      </div>
+
+      <div class="card logoBox pulse">
+        <img src="/mnt/data/0d3fdeeb-6d21-40fb-b5b1-d2696aba15d1.png" alt="logo">
+        <p style="font-size:13px;color:var(--muted);margin-top:6px">EcoGestor — missão: sustentabilidade prática</p>
+      </div>
+    </section>
+
+    <section id="servicos" class="card fade-up" style="margin-top:26px">
+      <h2>Produtos & Serviços</h2>
+      <p class="subtitle">Lista das funcionalidades principais e como elas ajudam organizações.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Registro de empresas e resíduos</h3>
+          <p style="color:var(--muted)">Crie uma ficha para cada empresa e relacione tipos de resíduos gerados.</p>
+          <div class="table-wrap" style="margin-top:10px">
+            <table id="resTable">
+              <thead><tr><th>Empresa</th><th>Residuo</th><th>Quantidade</th><th>Ações</th></tr></thead>
+              <tbody>
+                <tr><td>Exemplo S/A</td><td>Papel</td><td>120 kg</td><td class="actions"><button onclick="removeRow(this)">Remover</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <input id="company" placeholder="Empresa" />
+            <input id="residue" placeholder="Resíduo" />
+            <input id="qty" placeholder="Qtd (kg)" style="width:100px" />
+            <button onclick="addResidue()">Adicionar</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Pontos de Distribuição</h3>
+          <p style="color:var(--muted)">Registre pontos de coleta e conecte empresas que precisam descartar resíduos.</p>
+          <div class="media"><div>Mapa / pontos de distribuição (placeholder)</div></div>
+        </div>
+
+        <div class="card">
+          <h3>Conexões & Solicitações</h3>
+          <p style="color:var(--muted)">Empresas interessadas podem solicitar resíduos para reaproveitamento.</p>
+          <div style="margin-top:8px">
+            <div class="chip">Solução acessível para PMEs</div>
+            <div style="margin-top:10px;color:var(--muted);font-size:13px">Redução de custos, conformidade legal e oportunidades de receita.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ganhos" class="card fade-up">
+      <h2>Ganho de valor</h2>
+      <ul>
+        <li>Redução da poluição e impacto ambiental.</li>
+        <li>Cumprimento de regulamentações (evitar penalidades).</li>
+        <li>Melhora da imagem e valor de marca.</li>
+        <li>Maior segurança no local de trabalho.</li>
+      </ul>
+    </section>
+
+    <section id="dores" class="card fade-up">
+      <h2>Dores / Problemas que resolvemos</h2>
+      <ul>
+        <li>Altos custos para implementar SGRs.</li>
+        <li>Desconhecimento sobre soluções viáveis.</li>
+        <li>Infraestrutura precária e burocracia.</li>
+        <li>Risco de multas e problemas com reciclagem.</li>
+      </ul>
+    </section>
+
+    <section id="legislacao" class="card fade-up">
+      <h2>Legislação relevante</h2>
+      <div class="legend">
+        <div>Lei n°12.305/2010 - PNRS</div>
+        <div>Decreto n°10.936/2022</div>
+        <div>Lei n°6.938/1981 - PNMA</div>
+        <div>Lei n°9.605/1998 - Crimes Ambientais</div>
+        <div>Portaria n°280/2020 - MTR</div>
+        <div>Decreto n°10.240/2020 - Logística Reversa</div>
+      </div>
+    </section>
+
+    <section id="estudos" class="card fade-up">
+      <h2>Artigos & Pesquisas</h2>
+      <ul>
+        <li>Gestão de resíduos sólidos urbanos no Brasil (IPEA)</li>
+        <li>Economia circular e gestão de resíduos (BND)</li>
+        <li>Impactos das práticas de inovação na GRSU (FGV EAESP)</li>
+        <li>Diagnóstico da situação brasileira na gestão de resíduos (UFGS)</li>
+      </ul>
+
+      <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
+        <img src="/mnt/data/ef0b8003-61d5-4f12-8399-e89c8260ad13.png" alt="slide1" style="max-width:300px;border-radius:10px">
+        <img src="/mnt/data/52f2e580-3ca2-4de1-9c31-baa559ffc906.png" alt="slide2" style="max-width:300px;border-radius:10px">
+        <img src="/mnt/data/8a716def-81a1-4e85-8393-23d91127ab3b.png" alt="slide3" style="max-width:300px;border-radius:10px">
+      </div>
+    </section>
+
+    <section id="contato" class="card fade-up" style="margin-top:18px">
+      <h2>Contato</h2>
+      <p style="color:var(--muted)">Quer testar o EcoGestor? Envie mensagem e criaremos uma conta piloto.</p>
+      <form onsubmit="event.preventDefault();alert('Mensagem enviada (demo)')">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <input placeholder="Seu nome" required style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(2,6,23,0.06)">
+          <input placeholder="Email" required style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(2,6,23,0.06)">
+        </div>
+        <textarea placeholder="Mensagem" style="width:100%;margin-top:8px;padding:10px;border-radius:10px;border:1px solid rgba(2,6,23,0.06);height:100px"></textarea>
+        <div style="margin-top:8px"><button type="submit">Enviar</button></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div>© EcoGestor — Soluções acessíveis de gestão de resíduos · Dados e referências: IPEA, BNDES, FGV, UFGS, Capterra</div>
+  </footer>
+
+  <script>
+    // Smooth scroll + active nav
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault();
+        document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
+        a.classList.add('active');
+        const id = a.getAttribute('href');
+        document.querySelector(id).scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    })
+
+    // reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show') })
+    },{threshold:0.12})
+    document.querySelectorAll('.fade-up').forEach(el=>io.observe(el))
+
+    // table actions
+    function addResidue(){
+      const comp = document.getElementById('company');
+      const res = document.getElementById('residue');
+      const qty = document.getElementById('qty');
+      if(!comp.value||!res.value) return alert('Preencha empresa e resíduo');
+      const tb = document.querySelector('#resTable tbody');
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${escapeHtml(comp.value)}</td><td>${escapeHtml(res.value)}</td><td>${escapeHtml(qty.value||'—')}</td><td class="actions"><button onclick="removeRow(this)">Remover</button></td>`;
+      tb.appendChild(tr);
+      comp.value='';res.value='';qty.value='';
+    }
+    function removeRow(btn){
+      btn.closest('tr').remove();
+    }
+    function escapeHtml(s){return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}
+
+    // small interactive demo: highlight 40% stat
+    (function(){
+      const p = document.createElement('div');
+      p.style.marginTop='10px';p.style.color='var(--muted)';p.textContent='~40% das médias empresas não usam SGRs (Capterra)';
+      document.querySelector('#home .card').appendChild(p);
+    })();
+  </script>
+</body>
+</html>
